@@ -13,7 +13,11 @@ window.switchEducationTab = function (level) {
 
         if (tab) {
             // Reset to inactive style
-            tab.className = 'edu-tab px-8 py-3 rounded-full font-bold text-lg bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all hover:shadow-md cursor-pointer';
+            if (l === 'smp') {
+                tab.className = 'edu-tab px-8 py-3 rounded-full font-bold text-lg bg-white text-blue-600 hover:bg-blue-50 border border-blue-200 transition-all hover:shadow-md cursor-pointer';
+            } else {
+                tab.className = 'edu-tab px-8 py-3 rounded-full font-bold text-lg bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all hover:shadow-md cursor-pointer';
+            }
         }
     });
 
@@ -27,7 +31,11 @@ window.switchEducationTab = function (level) {
 
     if (selectedTab) {
         // Set active style
-        selectedTab.className = 'edu-tab px-8 py-3 rounded-full font-bold text-lg bg-primary text-white shadow-lg transition-all transform hover:-translate-y-1 ring-4 ring-emerald-100 cursor-pointer';
+        if (level === 'smp') {
+            selectedTab.className = 'edu-tab px-8 py-3 rounded-full font-bold text-lg bg-blue-600 text-white shadow-lg transition-all transform hover:-translate-y-1 ring-4 ring-blue-100 cursor-pointer';
+        } else {
+            selectedTab.className = 'edu-tab px-8 py-3 rounded-full font-bold text-lg bg-primary text-white shadow-lg transition-all transform hover:-translate-y-1 ring-4 ring-emerald-100 cursor-pointer';
+        }
     }
 }
 
